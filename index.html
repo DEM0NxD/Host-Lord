@@ -4,8 +4,18 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Axion</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
   <style>
-    /* Full screen container for particles */
+    * {
+      box-sizing: border-box;
+    }
+    html, body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Poppins', sans-serif;
+      background: #0f0f0f;
+      overflow-x: hidden;
+    }
     #tsparticles {
       position: fixed;
       width: 100%;
@@ -13,138 +23,132 @@
       top: 0;
       left: 0;
       z-index: -1;
-      background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+      background: linear-gradient(120deg, #0f2027, #203a43, #2c5364);
     }
-
-    body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      color: #e0e0e0;
+    .container {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
       text-align: center;
-      padding: 60px 20px;
-      margin: 0;
-      position: relative;
-      z-index: 0;
-      animation: fadeIn 1.2s ease-in-out;
+      padding: 40px 20px;
+      color: #f1f1f1;
+      animation: fadeIn 1.5s ease-in;
     }
-
     @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(10px); }
+      from { opacity: 0; transform: translateY(20px); }
       to { opacity: 1; transform: translateY(0); }
     }
-
-    h1 {
-      font-size: 3.8rem;
-      font-weight: 800;
-      margin-bottom: 10px;
-      color: #00ffc8;
-      text-shadow: 0 0 15px #00ffc8cc;
+    .glass {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 20px;
+      padding: 40px 30px;
+      backdrop-filter: blur(15px);
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+      max-width: 700px;
+      width: 100%;
     }
-
+    h1 {
+      font-size: 3.5rem;
+      font-weight: 800;
+      color: #00ffc8;
+      text-shadow: 0 0 10px #00ffc8aa;
+    }
     h2 {
-      font-size: 2.2rem;
+      font-size: 1.7rem;
       color: #ffffffcc;
       margin-top: -10px;
-      margin-bottom: 30px;
-      text-shadow: 0 0 6px #00ffc8aa;
+      margin-bottom: 25px;
     }
-
     p {
-      font-size: 1.3rem;
-      max-width: 650px;
-      margin: 0 auto 50px;
-      line-height: 1.6;
-      color: #ccc;
+      font-size: 1.2rem;
+      color: #cccccc;
+      line-height: 1.7;
+      margin-bottom: 30px;
     }
-
     .button {
-      display: inline-block;
-      background: linear-gradient(145deg, #00bfa5, #00ffc8);
+      background: linear-gradient(to right, #00bfa5, #00ffc8);
       color: #121212;
-      padding: 15px 45px;
-      font-size: 1.1rem;
+      padding: 14px 35px;
+      font-size: 1.05rem;
+      font-weight: 600;
+      border: none;
       border-radius: 50px;
       text-decoration: none;
-      margin: 10px 20px;
-      font-weight: 600;
-      box-shadow: 0 6px 20px #00ffc8aa;
+      margin: 10px 15px;
+      box-shadow: 0 5px 18px #00ffc8aa;
       transition: all 0.3s ease;
-      position: relative;
-      z-index: 1;
+      display: inline-block;
     }
-
     .button:hover {
-      transform: scale(1.05);
-      box-shadow: 0 8px 25px #00ffc8cc;
+      transform: translateY(-3px);
+      box-shadow: 0 10px 25px #00ffc8dd;
     }
-
     @media (max-width: 600px) {
       h1 {
-        font-size: 2.7rem;
+        font-size: 2.5rem;
       }
       h2 {
-        font-size: 1.5rem;
+        font-size: 1.2rem;
       }
       .button {
         display: block;
-        margin: 15px auto;
         width: 85%;
+        margin: 15px auto;
       }
     }
   </style>
 </head>
 <body>
   <div id="tsparticles"></div>
-
-  <h1>Axion</h1>
-  <h2>The Trusted Discord Bot</h2>
-  <p>Secure your Discord server with Axion — a powerful, reliable, and feature-rich moderation bot used by thousands of communities.</p>
-  
-  <a class="button" href="https://discord.com/oauth2/authorize?client_id=1313311543122989076" target="_blank" rel="noopener noreferrer">
-    🚀 Add to Server
-  </a>
-  <a class="button" href="https://discord.gg/juGp9jMGY7" target="_blank" rel="noopener noreferrer">
-    💬 Support Server
-  </a>
+  <div class="container">
+    <div class="glass">
+      <h1>Axion</h1>
+      <h2>Your Trusted Discord Bot</h2>
+      <p>Axion keeps your server secure and engaging with powerful moderation, utility, and fun commands. Join thousands who trust Axion to manage their communities effortlessly.</p>
+      <a class="button" href="https://discord.com/oauth2/authorize?client_id=1313311543122989076" target="_blank" rel="noopener noreferrer">🚀 Add to Server</a>
+      <a class="button" href="https://discord.gg/juGp9jMGY7" target="_blank" rel="noopener noreferrer">💬 Support Server</a>
+    </div>
+  </div>
 
   <!-- tsparticles library -->
   <script src="https://cdn.jsdelivr.net/npm/tsparticles@2/tsparticles.bundle.min.js"></script>
   <script>
     tsParticles.load("tsparticles", {
+      fullScreen: { enable: false },
       particles: {
         number: {
-          value: 70,
+          value: 60,
           density: {
             enable: true,
             area: 800,
           }
         },
         color: {
-          value: "#00ffc8"
+          value: ["#00ffc8", "#00bfa5"]
         },
         shape: {
           type: "circle"
         },
         opacity: {
-          value: 0.4,
+          value: 0.5,
           random: true
         },
         size: {
-          value: 3,
-          random: true
+          value: { min: 1.5, max: 3.5 }
         },
         move: {
           enable: true,
           speed: 1.2,
           direction: "none",
           random: true,
-          straight: false,
-          outModes: {
-            default: "out"
-          }
+          outModes: { default: "out" }
         },
         links: {
           enable: true,
-          distance: 150,
+          distance: 130,
           color: "#00ffc8",
           opacity: 0.3,
           width: 1
