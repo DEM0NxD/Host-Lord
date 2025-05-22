@@ -5,13 +5,24 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Trusted Discord Bot</title>
   <style>
+    /* Full screen container for particles */
+    #tsparticles {
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      z-index: -1; /* behind content */
+      background-color: #121212;
+    }
     body {
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background-color: #121212;
       color: #e0e0e0;
       text-align: center;
       padding: 60px 20px;
       margin: 0;
+      position: relative;
+      z-index: 0;
     }
     h1 {
       font-size: 3.5rem;
@@ -41,6 +52,8 @@
       transition: background-color 0.3s ease, box-shadow 0.3s ease;
       cursor: pointer;
       user-select: none;
+      position: relative;
+      z-index: 1;
     }
     .button:hover {
       background-color: #00e0c6;
@@ -59,6 +72,8 @@
   </style>
 </head>
 <body>
+  <div id="tsparticles"></div>
+
   <h1>Trusted Discord Bot</h1>
   <p>Join the Thousands Who Rely on Our Trusted Discord Server Security</p>
   <a class="button" href="https://discord.com/oauth2/authorize?client_id=1313311543122989076" target="_blank" rel="noopener noreferrer">
@@ -67,5 +82,53 @@
   <a class="button" href="https://discord.gg/juGp9jMGY7" target="_blank" rel="noopener noreferrer">
     Support Server
   </a>
+
+  <!-- tsparticles library -->
+  <script src="https://cdn.jsdelivr.net/npm/tsparticles@2/tsparticles.bundle.min.js"></script>
+  <script>
+    tsParticles.load("tsparticles", {
+      particles: {
+        number: {
+          value: 60,
+          density: {
+            enable: true,
+            area: 800,
+          }
+        },
+        color: {
+          value: "#00bfa5"
+        },
+        shape: {
+          type: "circle"
+        },
+        opacity: {
+          value: 0.5,
+          random: true
+        },
+        size: {
+          value: 3,
+          random: true
+        },
+        move: {
+          enable: true,
+          speed: 1,
+          direction: "none",
+          random: true,
+          straight: false,
+          outModes: {
+            default: "out"
+          }
+        },
+        links: {
+          enable: true,
+          distance: 150,
+          color: "#00bfa5",
+          opacity: 0.3,
+          width: 1
+        }
+      },
+      detectRetina: true
+    });
+  </script>
 </body>
 </html>
