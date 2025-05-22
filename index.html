@@ -7,36 +7,54 @@
   <style>
     body {
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: linear-gradient(135deg, #6b73ff 0%, #000dff 100%);
-      color: white;
+      background-color: #121212;
+      color: #e0e0e0;
       text-align: center;
-      padding: 50px;
+      padding: 60px 20px;
       margin: 0;
     }
     h1 {
-      font-size: 3rem;
-      text-shadow: 2px 2px 5px rgba(0,0,0,0.3);
+      font-size: 3.5rem;
+      font-weight: 700;
+      margin-bottom: 20px;
+      color: #00bfa5;
+      text-shadow: 0 0 10px #00bfa5aa;
     }
     p {
-      font-size: 1.25rem;
+      font-size: 1.3rem;
       max-width: 600px;
-      margin: 20px auto 40px;
+      margin: 0 auto 50px;
       line-height: 1.6;
+      color: #bbb;
     }
     .button {
       display: inline-block;
-      background-color: #ff4081;
-      color: white;
-      padding: 15px 30px;
-      font-size: 1rem;
-      border-radius: 30px;
+      background-color: #00bfa5;
+      color: #121212;
+      padding: 15px 40px;
+      font-size: 1.1rem;
+      border-radius: 40px;
       text-decoration: none;
       margin: 0 15px;
-      transition: background-color 0.3s ease;
+      font-weight: 600;
+      box-shadow: 0 4px 15px #00bfa5aa;
+      transition: background-color 0.3s ease, box-shadow 0.3s ease;
       cursor: pointer;
+      user-select: none;
     }
     .button:hover {
-      background-color: #e040fb;
+      background-color: #00e0c6;
+      box-shadow: 0 6px 20px #00e0c6cc;
+    }
+    @media (max-width: 500px) {
+      h1 {
+        font-size: 2.5rem;
+      }
+      .button {
+        display: block;
+        margin: 15px auto;
+        width: 80%;
+      }
     }
   </style>
 </head>
