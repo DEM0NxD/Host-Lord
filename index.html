@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Axion</title>
+  <title>Axion – Trusted Discord Bot</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
   <style>
     * {
@@ -13,9 +13,22 @@
       margin: 0;
       padding: 0;
       font-family: 'Poppins', sans-serif;
-      background: #0f0f0f;
       overflow-x: hidden;
+      height: 100%;
     }
+
+    body {
+      background: linear-gradient(-45deg, #0f0c29, #302b63, #24243e, #00bfa5);
+      background-size: 400% 400%;
+      animation: gradientBG 15s ease infinite;
+    }
+
+    @keyframes gradientBG {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
     #tsparticles {
       position: fixed;
       width: 100%;
@@ -23,51 +36,56 @@
       top: 0;
       left: 0;
       z-index: -1;
-      background: linear-gradient(120deg, #0f2027, #203a43, #2c5364);
     }
+
     .container {
       min-height: 100vh;
       display: flex;
-      flex-direction: column;
       align-items: center;
       justify-content: center;
       text-align: center;
       padding: 40px 20px;
       color: #f1f1f1;
-      animation: fadeIn 1.5s ease-in;
     }
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
+
     .glass {
       background: rgba(255, 255, 255, 0.05);
       border: 1px solid rgba(255, 255, 255, 0.1);
       border-radius: 20px;
       padding: 40px 30px;
-      backdrop-filter: blur(15px);
-      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+      backdrop-filter: blur(20px);
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
       max-width: 700px;
       width: 100%;
+      animation: fadeIn 2s ease;
     }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
     h1 {
       font-size: 3.5rem;
       font-weight: 800;
       color: #00ffc8;
       text-shadow: 0 0 10px #00ffc8aa;
     }
+
     h2 {
       font-size: 1.7rem;
       color: #ffffffcc;
       margin-top: -10px;
       margin-bottom: 25px;
     }
+
     p {
       font-size: 1.2rem;
       color: #cccccc;
       line-height: 1.7;
       margin-bottom: 30px;
     }
+
     .button {
       background: linear-gradient(to right, #00bfa5, #00ffc8);
       color: #121212;
@@ -82,17 +100,21 @@
       transition: all 0.3s ease;
       display: inline-block;
     }
+
     .button:hover {
       transform: translateY(-3px);
       box-shadow: 0 10px 25px #00ffc8dd;
     }
+
     @media (max-width: 600px) {
       h1 {
         font-size: 2.5rem;
       }
+
       h2 {
         font-size: 1.2rem;
       }
+
       .button {
         display: block;
         width: 85%;
@@ -119,38 +141,24 @@
     tsParticles.load("tsparticles", {
       fullScreen: { enable: false },
       particles: {
-        number: {
-          value: 60,
-          density: {
-            enable: true,
-            area: 800,
-          }
-        },
-        color: {
-          value: ["#00ffc8", "#00bfa5"]
-        },
-        shape: {
-          type: "circle"
-        },
-        opacity: {
-          value: 0.5,
-          random: true
-        },
-        size: {
-          value: { min: 1.5, max: 3.5 }
-        },
+        number: { value: 50, density: { enable: true, area: 800 } },
+        color: { value: ["#00ffc8", "#00bfa5"] },
+        shape: { type: "circle" },
+        opacity: { value: 0.3, random: true },
+        size: { value: { min: 1, max: 3 }, random: true },
         move: {
           enable: true,
-          speed: 1.2,
+          speed: 0.8,
           direction: "none",
           random: true,
+          straight: false,
           outModes: { default: "out" }
         },
         links: {
           enable: true,
           distance: 130,
           color: "#00ffc8",
-          opacity: 0.3,
+          opacity: 0.2,
           width: 1
         }
       },
