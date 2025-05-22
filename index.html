@@ -1,86 +1,54 @@
 <!DOCTYPE html>
-<html lang="en" >
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Axion</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet" />
+  <title>Axion – Trusted Discord Bot</title>
   <style>
-    * {
-      box-sizing: border-box;
-    }
-    html, body {
-      margin: 0; padding: 0;
-      height: 100%;
-      font-family: 'Poppins', sans-serif;
-      background: #0a0a0a;
-      overflow-x: hidden;
-      color: #e0f7f5;
-      -webkit-font-smoothing: antialiased;
-      -moz-osx-font-smoothing: grayscale;
-    }
-
-    /* Animated gradient background */
-    body::before {
-      content: "";
-      position: fixed;
-      top: -50%;
-      left: -50%;
-      width: 200%;
-      height: 200%;
-      background: linear-gradient(270deg, #00ffc8, #00bfa5, #00ffc8, #00bfa5);
-      background-size: 800% 800%;
-      animation: bgmove 25s ease infinite;
-      filter: blur(80px);
-      z-index: -2;
-      opacity: 0.35;
-      border-radius: 50%;
-      pointer-events: none;
-    }
-
-    @keyframes bgmove {
-      0% { background-position: 0% 50%; }
-      50% { background-position: 100% 50%; }
-      100% { background-position: 0% 50%; }
-    }
-
+    /* Keep full screen container for particles exactly as you had */
     #tsparticles {
       position: fixed;
       width: 100%;
       height: 100%;
-      top: 0; left: 0;
-      z-index: -1;
+      top: 0;
+      left: 0;
+      z-index: -1; /* behind content */
+      background-color: #121212; /* original dark background */
     }
 
-    .container {
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 40px 20px;
+    /* Body styling upgraded */
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      color: #e0f7f5;
       text-align: center;
+      padding: 60px 20px;
+      margin: 0;
+      position: relative;
+      z-index: 0;
+      background: transparent; /* so particles show fully */
+      user-select: none;
     }
 
-    .glass {
-      background: rgba(0, 31, 28, 0.3);
-      border: 1px solid rgba(0, 255, 200, 0.2);
-      border-radius: 24px;
-      padding: 50px 40px;
+    /* Glass container */
+    .glass-container {
       max-width: 700px;
-      width: 100%;
+      margin: 0 auto;
+      padding: 50px 40px;
+      background: rgba(0, 47, 39, 0.3);
+      border-radius: 30px;
+      border: 1px solid rgba(0, 191, 165, 0.2);
       box-shadow:
-        0 0 20px rgba(0, 255, 200, 0.4),
-        inset 0 0 60px rgba(0, 255, 200, 0.2);
-      backdrop-filter: saturate(180%) blur(30px);
-      position: relative;
-      overflow: hidden;
-      animation: fadeInUp 1.8s ease forwards;
+        0 0 20px rgba(0, 191, 165, 0.3),
+        inset 0 0 40px rgba(0, 191, 165, 0.15);
+      backdrop-filter: saturate(180%) blur(20px);
+      animation: fadeInUp 1.5s ease forwards;
+      user-select: text;
     }
 
     @keyframes fadeInUp {
       from {
         opacity: 0;
-        transform: translateY(40px);
+        transform: translateY(30px);
       }
       to {
         opacity: 1;
@@ -88,65 +56,64 @@
       }
     }
 
-    /* Shine effect on heading */
+    /* Premium neon gradient heading with subtle shine */
     h1 {
-      font-size: 3.8rem;
-      font-weight: 800;
-      background: linear-gradient(90deg, #00ffc8 0%, #00bfa5 40%, #00ffc8 80%);
-      background-clip: text;
+      font-size: 3.5rem;
+      font-weight: 700;
+      margin-bottom: 10px;
+      background: linear-gradient(90deg, #00bfa5, #00e0c6, #00bfa5);
       -webkit-background-clip: text;
-      color: transparent;
+      -webkit-text-fill-color: transparent;
       position: relative;
       user-select: none;
-      margin-bottom: 10px;
       text-shadow:
-        0 0 5px #00ffc8aa,
-        0 0 15px #00ffc8bb;
-      animation: shine 3.5s ease infinite;
+        0 0 6px #00bfa5aa,
+        0 0 12px #00e0c6bb;
+      animation: shine 4s linear infinite;
     }
+
     @keyframes shine {
-      0%, 100% { background-position: -200% 0; }
-      50% { background-position: 200% 0; }
+      0%, 100% {
+        background-position: -150% 0;
+      }
+      50% {
+        background-position: 150% 0;
+      }
     }
 
     h2 {
-      font-size: 1.9rem;
-      font-weight: 600;
+      font-size: 2rem;
+      color: #ffffffcc;
       margin-top: -10px;
-      margin-bottom: 35px;
-      color: #00ffc8cc;
-      text-shadow:
-        0 0 6px #00ffc8aa,
-        0 0 12px #00bfa5cc;
+      margin-bottom: 30px;
+      text-shadow: 0 0 8px #00bfa5aa;
       user-select: none;
     }
 
     p {
-      font-size: 1.25rem;
-      line-height: 1.7;
+      font-size: 1.3rem;
       max-width: 600px;
-      margin: 0 auto 45px auto;
-      color: #a5fff5cc;
+      margin: 0 auto 50px;
+      line-height: 1.6;
+      color: #c7dede;
     }
 
+    /* Upgraded neon button styling */
     .button {
       display: inline-block;
-      padding: 16px 48px;
+      background-color: #00bfa5;
+      color: #121212;
+      padding: 15px 40px;
       font-size: 1.1rem;
-      font-weight: 700;
-      color: #0a0a0a;
-      background: linear-gradient(135deg, #00ffc8, #00bfa5);
-      border-radius: 50px;
-      box-shadow:
-        0 0 20px #00ffc8cc,
-        0 5px 15px #00bfa5cc;
-      border: none;
+      border-radius: 40px;
+      text-decoration: none;
+      margin: 0 15px;
+      font-weight: 600;
+      box-shadow: 0 4px 15px #00bfa5aa;
+      transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
       cursor: pointer;
       user-select: none;
-      transition: all 0.3s ease;
-      text-decoration: none;
       position: relative;
-      overflow: hidden;
       z-index: 1;
     }
     .button::before {
@@ -156,77 +123,110 @@
       left: -50%;
       width: 200%;
       height: 200%;
-      background: radial-gradient(circle at center, #00ffc8, transparent 70%);
+      background: radial-gradient(circle at center, #00e0c6, transparent 70%);
       opacity: 0.4;
-      filter: blur(20px);
+      filter: blur(15px);
       transition: opacity 0.3s ease;
       z-index: -1;
+      border-radius: 40px;
     }
     .button:hover {
-      transform: translateY(-4px) scale(1.05);
-      box-shadow:
-        0 0 30px #00ffc8ee,
-        0 8px 25px #00bfa5ee;
+      background-color: #00e0c6;
+      box-shadow: 0 6px 20px #00e0c6cc;
+      transform: scale(1.07);
     }
     .button:hover::before {
       opacity: 0.7;
     }
 
-    @media (max-width: 600px) {
+    /* Responsive */
+    @media (max-width: 500px) {
       h1 {
-        font-size: 2.8rem;
+        font-size: 2.5rem;
       }
       h2 {
-        font-size: 1.3rem;
-      }
-      p {
-        font-size: 1rem;
-        margin-bottom: 35px;
+        font-size: 1.5rem;
       }
       .button {
         display: block;
-        width: 85%;
-        margin: 0 auto 18px auto;
+        margin: 15px auto;
+        width: 80%;
+      }
+      .glass-container {
+        padding: 30px 20px;
+        border-radius: 20px;
       }
     }
   </style>
 </head>
 <body>
   <div id="tsparticles"></div>
-  <div class="container">
-    <div class="glass" role="main" aria-label="Axion Trusted Discord Bot landing content">
-      <h1>Axion</h1>
-      <h2>Your Trusted Discord Bot</h2>
-      <p>Axion keeps your server secure and engaging with powerful moderation, utility, and fun commands. Join thousands who trust Axion to manage their communities effortlessly.</p>
-      <a class="button" href="https://discord.com/oauth2/authorize?client_id=1313311543122989076" target="_blank" rel="noopener noreferrer" aria-label="Add Axion to your Discord server">🚀 Add to Server</a>
-      <a class="button" href="https://discord.gg/juGp9jMGY7" target="_blank" rel="noopener noreferrer" aria-label="Join the Axion support Discord server">💬 Support Server</a>
-    </div>
-  </div>
+
+  <main class="glass-container" role="main" aria-label="Axion trusted discord bot information">
+    <h1>Axion</h1>
+    <h2>The Trusted Discord Bot</h2>
+    <p>Join the Thousands Who Rely on Our Trusted Discord Server Security</p>
+    <a
+      class="button"
+      href="https://discord.com/oauth2/authorize?client_id=1313311543122989076"
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="Add Axion to your Discord server"
+    >
+      Add to Server
+    </a>
+    <a
+      class="button"
+      href="https://discord.gg/juGp9jMGY7"
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="Join Axion support Discord server"
+    >
+      Support Server
+    </a>
+  </main>
 
   <!-- tsparticles library -->
   <script src="https://cdn.jsdelivr.net/npm/tsparticles@2/tsparticles.bundle.min.js"></script>
   <script>
     tsParticles.load("tsparticles", {
-      fullScreen: { enable: false },
       particles: {
-        number: { value: 45, density: { enable: true, area: 900 } },
-        color: { value: ["#00ffc8", "#00bfa5", "#007a66"] },
-        shape: { type: ["circle", "hexagon"] },
-        opacity: { value: 0.25, random: { enable: true, minimumValue: 0.1 } },
-        size: { value: { min: 1.5, max: 3.5 }, random: true },
+        number: {
+          value: 60,
+          density: {
+            enable: true,
+            area: 800,
+          }
+        },
+        color: {
+          value: "#00bfa5"
+        },
+        shape: {
+          type: "circle"
+        },
+        opacity: {
+          value: 0.5,
+          random: true
+        },
+        size: {
+          value: 3,
+          random: true
+        },
         move: {
           enable: true,
           speed: 1,
           direction: "none",
           random: true,
           straight: false,
-          outModes: { default: "out" }
+          outModes: {
+            default: "out"
+          }
         },
         links: {
           enable: true,
-          distance: 140,
-          color: "#00ffc8",
-          opacity: 0.15,
+          distance: 150,
+          color: "#00bfa5",
+          opacity: 0.3,
           width: 1
         }
       },
