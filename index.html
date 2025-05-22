@@ -113,6 +113,48 @@
       line-height: 1.6;
     }
 
+    .feedback {
+      max-width: 600px;
+      margin: 50px auto 20px;
+      text-align: center;
+    }
+
+    .stars {
+      font-size: 2rem;
+      color: #00bfa5;
+      cursor: pointer;
+    }
+
+    .feedback textarea {
+      width: 100%;
+      padding: 15px;
+      border-radius: 10px;
+      border: 1px solid #00bfa5aa;
+      background: rgba(0, 0, 0, 0.2);
+      color: #fff;
+      margin-top: 20px;
+      font-size: 1rem;
+      resize: none;
+      box-shadow: 0 0 10px #00bfa555;
+    }
+
+    .feedback button {
+      margin-top: 15px;
+      padding: 12px 25px;
+      background: #00bfa5;
+      color: #000;
+      font-weight: bold;
+      border: none;
+      border-radius: 30px;
+      cursor: pointer;
+      box-shadow: 0 0 10px #00bfa5aa;
+    }
+
+    .feedback button:hover {
+      background: #00e0c6;
+      box-shadow: 0 0 15px #00e0c6cc;
+    }
+
     footer {
       margin-top: 60px;
       font-size: 0.9rem;
@@ -174,6 +216,16 @@
     </div>
   </div>
 
+  <!-- Feedback Section -->
+  <div class="feedback">
+    <h2>⭐ Rate & Suggest</h2>
+    <div class="stars">
+      ⭐⭐⭐⭐⭐
+    </div>
+    <textarea rows="5" placeholder="Leave a suggestion or comment here..."></textarea><br>
+    <button onclick="alert('Thanks for your feedback!')">Submit</button>
+  </div>
+
   <footer>
     Made by Lord ❤️
   </footer>
@@ -184,35 +236,20 @@
     tsParticles.load("tsparticles", {
       fullScreen: { enable: false },
       background: {
-        color: {
-          value: "#121212"
-        }
+        color: { value: "#121212" }
       },
       particles: {
-        number: {
-          value: 80
-        },
-        color: {
-          value: "#00bfa5"
-        },
-        shape: {
-          type: "circle"
-        },
-        opacity: {
-          value: 0.5
-        },
-        size: {
-          value: 3,
-          random: true
-        },
+        number: { value: 80 },
+        color: { value: "#00bfa5" },
+        shape: { type: "circle" },
+        opacity: { value: 0.5 },
+        size: { value: 3, random: true },
         move: {
           enable: true,
           speed: 1,
           direction: "none",
           random: false,
-          outModes: {
-            default: "out"
-          }
+          outModes: { default: "out" }
         },
         links: {
           enable: true,
@@ -225,23 +262,12 @@
       detectRetina: true,
       interactivity: {
         events: {
-          onClick: {
-            enable: true,
-            mode: "push"
-          },
-          onHover: {
-            enable: true,
-            mode: "repulse"
-          }
+          onClick: { enable: true, mode: "push" },
+          onHover: { enable: true, mode: "repulse" }
         },
         modes: {
-          push: {
-            quantity: 4
-          },
-          repulse: {
-            distance: 100,
-            duration: 0.4
-          }
+          push: { quantity: 4 },
+          repulse: { distance: 100, duration: 0.4 }
         }
       }
     });
