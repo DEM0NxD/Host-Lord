@@ -1,12 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>My First Website</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>My Fancy Website</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #6b73ff 0%, #000dff 100%);
+      color: white;
+      text-align: center;
+      padding: 50px;
+      margin: 0;
+    }
+    h1 {
+      font-size: 3rem;
+      text-shadow: 2px 2px 5px rgba(0,0,0,0.3);
+    }
+    p {
+      font-size: 1.25rem;
+      max-width: 600px;
+      margin: 20px auto;
+      line-height: 1.6;
+    }
+    button {
+      background-color: #ff4081;
+      border: none;
+      color: white;
+      padding: 15px 30px;
+      font-size: 1rem;
+      border-radius: 30px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      margin-top: 30px;
+    }
+    button:hover {
+      background-color: #e040fb;
+    }
+  </style>
 </head>
 <body>
-    <h1>Welcome to My Website!</h1>
-    <p>This is my first webpage deployed with GitHub and Vercel.</p>
+  <h1>Welcome to My Fancy Website!</h1>
+  <p>This is my first website, now with colors, fonts, and a cool button.</p>
+  <button onclick="alert('You clicked the fancy button!')">Click Me</button>
 </body>
 </html>
