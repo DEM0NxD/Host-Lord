@@ -3,8 +3,20 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Axion – Trusted Discord Bot</title>
+  <title>Axion - Trusted Discord Bot</title>
   <style>
+    @import url('https://fonts.googleapis.com/css2?family=Segoe+UI:wght@400;700&display=swap');
+
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #121212;
+      color: #e0e0e0;
+      overflow-x: hidden;
+    }
+
     #tsparticles {
       position: fixed;
       width: 100%;
@@ -12,175 +24,179 @@
       top: 0;
       left: 0;
       z-index: -1;
-      background-color: #121212;
     }
 
     body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      color: #e0f7f5;
       text-align: center;
       padding: 60px 20px;
-      margin: 0;
       position: relative;
-      z-index: 0;
-      background: transparent;
-      user-select: none;
-    }
-
-    .glass-container {
-      max-width: 700px;
-      margin: 0 auto;
-      padding: 50px 40px;
-      background: rgba(0, 47, 39, 0.3);
-      border-radius: 30px;
-      border: 1px solid rgba(0, 191, 165, 0.2);
-      box-shadow: 0 0 20px rgba(0, 191, 165, 0.3), inset 0 0 40px rgba(0, 191, 165, 0.15);
-      backdrop-filter: saturate(180%) blur(20px);
-      animation: fadeInUp 1.5s ease forwards;
-    }
-
-    @keyframes fadeInUp {
-      from { opacity: 0; transform: translateY(30px); }
-      to { opacity: 1; transform: translateY(0); }
     }
 
     h1 {
       font-size: 3.5rem;
       font-weight: 700;
       margin-bottom: 10px;
-      background: linear-gradient(90deg, #00bfa5, #00e0c6, #00bfa5);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      text-shadow: 0 0 6px #00bfa5aa, 0 0 12px #00e0c6bb;
-      animation: shine 4s linear infinite;
-    }
-
-    @keyframes shine {
-      0%, 100% { background-position: -150% 0; }
-      50% { background-position: 150% 0; }
+      color: #00bfa5;
+      text-shadow: 0 0 10px #00bfa5aa;
     }
 
     h2 {
       font-size: 2rem;
-      color: #ffffffcc;
+      color: #ffffffaa;
       margin-top: -10px;
       margin-bottom: 30px;
-      text-shadow: 0 0 8px #00bfa5aa;
-    }
-
-    .badges {
-      display: flex;
-      justify-content: center;
-      gap: 10px;
-      margin-bottom: 20px;
-    }
-
-    .badge {
-      background-color: #00bfa5;
-      color: #121212;
-      padding: 6px 14px;
-      border-radius: 30px;
-      font-size: 0.9rem;
-      font-weight: 600;
-      box-shadow: 0 0 8px #00bfa5aa;
-      animation: float 3s ease-in-out infinite;
-    }
-
-    @keyframes float {
-      0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(-5px); }
-    }
-
-    p {
-      font-size: 1.3rem;
-      max-width: 600px;
-      margin: 0 auto 50px;
-      line-height: 1.6;
-      color: #c7dede;
+      text-shadow: 0 0 5px #00bfa5aa;
     }
 
     .button {
-      display: inline-block;
+      display: inline-flex;
+      align-items: center;
       background-color: #00bfa5;
       color: #121212;
-      padding: 15px 40px;
+      padding: 15px 30px;
       font-size: 1.1rem;
       border-radius: 40px;
       text-decoration: none;
-      margin: 0 15px;
+      margin: 10px 15px;
       font-weight: 600;
       box-shadow: 0 4px 15px #00bfa5aa;
-      transition: all 0.3s ease;
-      position: relative;
+      transition: background-color 0.3s ease, box-shadow 0.3s ease;
+      cursor: pointer;
+      user-select: none;
       z-index: 1;
+    }
+
+    .button img {
+      width: 22px;
+      margin-right: 10px;
     }
 
     .button:hover {
       background-color: #00e0c6;
       box-shadow: 0 6px 20px #00e0c6cc;
-      transform: scale(1.07);
+    }
+
+    .features {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+      margin: 50px auto;
+      max-width: 1000px;
+    }
+
+    .feature {
+      background-color: #1e1e1e;
+      border-radius: 12px;
+      padding: 25px;
+      box-shadow: 0 0 10px #00bfa555;
+      text-align: left;
+      transition: transform 0.3s ease;
+    }
+
+    .feature:hover {
+      transform: translateY(-5px);
+    }
+
+    .feature h3 {
+      color: #00bfa5;
+      margin-bottom: 10px;
+      display: flex;
+      align-items: center;
+      font-size: 1.2rem;
+    }
+
+    .feature h3 img {
+      width: 20px;
+      margin-right: 10px;
+    }
+
+    .feature p {
+      color: #bbb;
+      font-size: 1rem;
+      line-height: 1.6;
     }
 
     footer {
-      margin-top: 40px;
-      color: #777;
+      margin-top: 60px;
       font-size: 0.9rem;
-      text-align: center;
-      opacity: 0.7;
-      text-shadow: 0 0 4px #00bfa566;
+      color: #666;
     }
 
-    @media (max-width: 500px) {
-      h1 { font-size: 2.5rem; }
-      h2 { font-size: 1.5rem; }
+    @media (max-width: 600px) {
+      h1 {
+        font-size: 2.5rem;
+      }
+
+      h2 {
+        font-size: 1.5rem;
+      }
+
       .button {
         display: block;
         margin: 15px auto;
         width: 80%;
       }
-      .glass-container {
-        padding: 30px 20px;
-        border-radius: 20px;
-      }
-      .badges {
-        flex-wrap: wrap;
+
+      .features {
+        grid-template-columns: 1fr;
       }
     }
   </style>
 </head>
 <body>
+
   <div id="tsparticles"></div>
 
-  <main class="glass-container">
-    <h1>Axion</h1>
-    <h2>The Trusted Discord Bot</h2>
+  <h1>Axion</h1>
+  <h2>The Trusted Discord Bot</h2>
+  <p>Join the thousands who rely on Axion for powerful, reliable server protection and moderation.</p>
 
-    <!-- BADGES -->
-    <div class="badges">
-      <div class="badge">✅ Verified</div>
-      <div class="badge">🛡️ Security</div>
-      <div class="badge">✨ Premium</div>
+  <a class="button" href="https://discord.com/oauth2/authorize?client_id=1313311543122989076" target="_blank">
+    <img src="https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/svg/1f4e9.svg" alt="Add to Server">
+    Add to Server
+  </a>
+
+  <a class="button" href="https://discord.gg/juGp9jMGY7" target="_blank">
+    <img src="https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/svg/1f4ac.svg" alt="Support Server">
+    Support Server
+  </a>
+
+  <div class="features">
+    <div class="feature">
+      <h3><img src="https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/svg/1f512.svg" alt="Lock"> Advanced Real-Time Protection</h3>
+      <p>Axion Bot delivers continuous, advanced real-time protection to safeguard your Discord server from threats 24/7.</p>
     </div>
+    <div class="feature">
+      <h3><img src="https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/svg/2699.svg" alt="Gear"> Customizable Rapid Security</h3>
+      <p>Tailor Axion Bot’s security features to your server’s specific needs for fast and effective threat neutralization.</p>
+    </div>
+    <div class="feature">
+      <h3><img src="https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/svg/1f4bb.svg" alt="Laptop"> User-Friendly Quick Setup</h3>
+      <p>Deploy Axion Bot effortlessly with an intuitive setup process, ensuring robust security in just minutes.</p>
+    </div>
+    <div class="feature">
+      <h3><img src="https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/svg/23f0.svg" alt="Clock"> 24/7 Vigilant Monitoring</h3>
+      <p>Benefit from round-the-clock monitoring with Axion Bot, which instantly detects and responds to potential threats.</p>
+    </div>
+  </div>
 
-    <p>Join the Thousands Who Rely on Our Trusted Discord Server Security</p>
-
-    <a class="button" href="https://discord.com/oauth2/authorize?client_id=1313311543122989076" target="_blank">Add to Server</a>
-    <a class="button" href="https://discord.gg/juGp9jMGY7" target="_blank">Support Server</a>
-  </main>
-
-  <!-- FOOTER -->
-  <footer>Made by Lord</footer>
+  <footer>
+    Made with ❤️ by Lord
+  </footer>
 
   <!-- tsparticles -->
   <script src="https://cdn.jsdelivr.net/npm/tsparticles@2/tsparticles.bundle.min.js"></script>
   <script>
     tsParticles.load("tsparticles", {
+      background: {
+        color: "#121212"
+      },
       particles: {
         number: {
           value: 60,
           density: {
             enable: true,
-            area: 800,
+            area: 800
           }
         },
         color: {
@@ -200,7 +216,9 @@
         move: {
           enable: true,
           speed: 1,
+          direction: "none",
           random: true,
+          straight: false,
           outModes: {
             default: "out"
           }
@@ -213,21 +231,22 @@
           width: 1
         }
       },
+      detectRetina: true,
       interactivity: {
         events: {
           onClick: {
             enable: true,
             mode: "push"
-          },
+          }
         },
         modes: {
           push: {
-            quantity: 6
+            quantity: 4
           }
         }
-      },
-      detectRetina: true
+      }
     });
   </script>
+
 </body>
 </html>
