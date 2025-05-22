@@ -184,68 +184,16 @@
     Made with ❤️ by Lord
   </footer>
 
-  <!-- tsparticles -->
-  <script src="https://cdn.jsdelivr.net/npm/tsparticles@2/tsparticles.bundle.min.js"></script>
+  <!-- tsParticles Stars Preset -->
+  <script src="https://cdn.jsdelivr.net/npm/@tsparticles/preset-stars@3/tsparticles.preset.stars.bundle.min.js"></script>
   <script>
-    tsParticles.load("tsparticles", {
-      background: {
-        color: "#121212"
-      },
-      particles: {
-        number: {
-          value: 60,
-          density: {
-            enable: true,
-            area: 800
-          }
-        },
-        color: {
-          value: "#00bfa5"
-        },
-        shape: {
-          type: "circle"
-        },
-        opacity: {
-          value: 0.5,
-          random: true
-        },
-        size: {
-          value: 3,
-          random: true
-        },
-        move: {
-          enable: true,
-          speed: 1,
-          direction: "none",
-          random: true,
-          straight: false,
-          outModes: {
-            default: "out"
-          }
-        },
-        links: {
-          enable: true,
-          distance: 150,
-          color: "#00bfa5",
-          opacity: 0.3,
-          width: 1
-        }
-      },
-      detectRetina: true,
-      interactivity: {
-        events: {
-          onClick: {
-            enable: true,
-            mode: "push"
-          }
-        },
-        modes: {
-          push: {
-            quantity: 4
-          }
-        }
-      }
-    });
+    (async () => {
+      await loadStarsPreset(tsParticles);
+
+      await tsParticles.load("tsparticles", {
+        preset: "stars"
+      });
+    })();
   </script>
 
 </body>
