@@ -12,8 +12,7 @@
       padding: 0;
       height: 100%;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background-color: #121212;
-      color: #e0e0e0;
+      background: radial-gradient(circle at 30% 30%, #001f1f, #0a0a0a);
       overflow-x: hidden;
     }
 
@@ -27,6 +26,7 @@
     }
 
     body {
+      color: #e0e0e0;
       text-align: center;
       padding: 60px 20px;
       position: relative;
@@ -37,7 +37,7 @@
       font-weight: 700;
       margin-bottom: 10px;
       color: #00bfa5;
-      text-shadow: 0 0 10px #00bfa5aa;
+      text-shadow: 0 0 20px #00bfa5aa;
     }
 
     h2 {
@@ -45,7 +45,7 @@
       color: #ffffffaa;
       margin-top: -10px;
       margin-bottom: 30px;
-      text-shadow: 0 0 5px #00bfa5aa;
+      text-shadow: 0 0 10px #00bfa5aa;
     }
 
     .button {
@@ -60,7 +60,7 @@
       margin: 10px 15px;
       font-weight: 600;
       box-shadow: 0 4px 15px #00bfa5aa;
-      transition: background-color 0.3s ease, box-shadow 0.3s ease;
+      transition: 0.3s ease;
       cursor: pointer;
       user-select: none;
       z-index: 1;
@@ -85,11 +85,12 @@
     }
 
     .feature {
-      background-color: #1e1e1e;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid #00bfa5aa;
       border-radius: 12px;
       padding: 25px;
-      box-shadow: 0 0 10px #00bfa555;
-      text-align: left;
+      box-shadow: 0 0 15px #00bfa555;
+      backdrop-filter: blur(10px);
       transition: transform 0.3s ease;
     }
 
@@ -98,20 +99,16 @@
     }
 
     .feature h3 {
-      color: #00bfa5;
+      color: #00e0c6;
       margin-bottom: 10px;
+      font-size: 1.2rem;
       display: flex;
       align-items: center;
-      font-size: 1.2rem;
-    }
-
-    .feature h3 img {
-      width: 20px;
-      margin-right: 10px;
+      gap: 10px;
     }
 
     .feature p {
-      color: #bbb;
+      color: #ccc;
       font-size: 1rem;
       line-height: 1.6;
     }
@@ -119,24 +116,21 @@
     footer {
       margin-top: 60px;
       font-size: 0.9rem;
-      color: #666;
+      color: #777;
     }
 
     @media (max-width: 600px) {
       h1 {
         font-size: 2.5rem;
       }
-
       h2 {
         font-size: 1.5rem;
       }
-
       .button {
         display: block;
         margin: 15px auto;
         width: 80%;
       }
-
       .features {
         grid-template-columns: 1fr;
       }
@@ -152,49 +146,105 @@
   <p>Join the thousands who rely on Axion for powerful, reliable server protection and moderation.</p>
 
   <a class="button" href="https://discord.com/oauth2/authorize?client_id=1313311543122989076" target="_blank">
-    <img src="https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/svg/1f4e9.svg" alt="Add to Server">
+    <img src="https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/svg/1f4e9.svg" alt="Add">
     Add to Server
   </a>
 
   <a class="button" href="https://discord.gg/juGp9jMGY7" target="_blank">
-    <img src="https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/svg/1f4ac.svg" alt="Support Server">
+    <img src="https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/svg/1f4ac.svg" alt="Chat">
     Support Server
   </a>
 
   <div class="features">
     <div class="feature">
-      <h3><img src="https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/svg/1f512.svg" alt="Lock"> Advanced Real-Time Protection</h3>
+      <h3>🔒 Advanced Real-Time Protection</h3>
       <p>Axion Bot delivers continuous, advanced real-time protection to safeguard your Discord server from threats 24/7.</p>
     </div>
     <div class="feature">
-      <h3><img src="https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/svg/2699.svg" alt="Gear"> Customizable Rapid Security</h3>
+      <h3>⚙️ Customizable Rapid Security</h3>
       <p>Tailor Axion Bot’s security features to your server’s specific needs for fast and effective threat neutralization.</p>
     </div>
     <div class="feature">
-      <h3><img src="https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/svg/1f4bb.svg" alt="Laptop"> User-Friendly Quick Setup</h3>
+      <h3>💻 User-Friendly Quick Setup</h3>
       <p>Deploy Axion Bot effortlessly with an intuitive setup process, ensuring robust security in just minutes.</p>
     </div>
     <div class="feature">
-      <h3><img src="https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/svg/23f0.svg" alt="Clock"> 24/7 Vigilant Monitoring</h3>
+      <h3>⏰ 24/7 Vigilant Monitoring</h3>
       <p>Benefit from round-the-clock monitoring with Axion Bot, which instantly detects and responds to potential threats.</p>
     </div>
   </div>
 
   <footer>
-    Made by Lord
+    Made by Lord ❤️
   </footer>
 
-  <!-- tsParticles Stars Preset -->
-  <script src="https://cdn.jsdelivr.net/npm/@tsparticles/preset-stars@3/tsparticles.preset.stars.bundle.min.js"></script>
+  <!-- tsParticles -->
+  <script src="https://cdn.jsdelivr.net/npm/tsparticles@2.11.1/tsparticles.bundle.min.js"></script>
   <script>
-    (async () => {
-      await loadStarsPreset(tsParticles);
-
-      await tsParticles.load("tsparticles", {
-        preset: "stars"
-      });
-    })();
+    tsParticles.load("tsparticles", {
+      fullScreen: { enable: false },
+      background: {
+        color: {
+          value: "#121212"
+        }
+      },
+      particles: {
+        number: {
+          value: 80
+        },
+        color: {
+          value: "#00bfa5"
+        },
+        shape: {
+          type: "circle"
+        },
+        opacity: {
+          value: 0.5
+        },
+        size: {
+          value: 3,
+          random: true
+        },
+        move: {
+          enable: true,
+          speed: 1,
+          direction: "none",
+          random: false,
+          outModes: {
+            default: "out"
+          }
+        },
+        links: {
+          enable: true,
+          distance: 120,
+          color: "#00bfa5",
+          opacity: 0.4,
+          width: 1
+        }
+      },
+      detectRetina: true,
+      interactivity: {
+        events: {
+          onClick: {
+            enable: true,
+            mode: "push"
+          },
+          onHover: {
+            enable: true,
+            mode: "repulse"
+          }
+        },
+        modes: {
+          push: {
+            quantity: 4
+          },
+          repulse: {
+            distance: 100,
+            duration: 0.4
+          }
+        }
+      }
+    });
   </script>
-
 </body>
 </html>
