@@ -2,26 +2,10 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Axion - Trusted Discord Bot</title>
-
-  <!-- Meta Description + Open Graph -->
-  <meta name="description" content="Axion is a trusted Discord bot offering real-time protection, fast setup, and 24/7 moderation. Add Axion today.">
-  <meta property="og:title" content="Axion - Trusted Discord Bot">
-  <meta property="og:description" content="Protect your Discord server with Axion Bot. Reliable, fast, and easy to set up.">
-  <meta property="og:image" content="your-thumbnail-url.png">
-  <meta property="og:type" content="website">
-
-  <!-- Favicon -->
-  <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/5968/5968756.png" />
-
-  <!-- Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Segoe+UI:wght@400;700&display=swap" rel="stylesheet" />
-
   <style>
-    html {
-      scroll-behavior: smooth;
-    }
+    @import url('https://fonts.googleapis.com/css2?family=Segoe+UI:wght@400;700&display=swap');
 
     html, body {
       margin: 0;
@@ -30,12 +14,6 @@
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       background: radial-gradient(circle at 30% 30%, #001f1f, #0a0a0a);
       overflow-x: hidden;
-      animation: fadeIn 0.7s ease-in;
-    }
-
-    @keyframes fadeIn {
-      from { opacity: 0; }
-      to { opacity: 1; }
     }
 
     #tsparticles {
@@ -52,6 +30,13 @@
       text-align: center;
       padding: 60px 20px;
       position: relative;
+    }
+
+    .bot-logo {
+      width: 100px;
+      border-radius: 50%;
+      box-shadow: 0 0 15px #00bfa5aa;
+      margin-bottom: 20px;
     }
 
     h1 {
@@ -113,13 +98,11 @@
       padding: 25px;
       box-shadow: 0 0 15px #00bfa555;
       backdrop-filter: blur(10px);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      transition: transform 0.3s ease;
     }
 
     .feature:hover {
-      transform: translateY(-5px) scale(1.02);
-      box-shadow: 0 0 25px #00e0c688;
-      border-color: #00e0c6;
+      transform: translateY(-5px);
     }
 
     .feature h3 {
@@ -143,16 +126,10 @@
       text-align: center;
     }
 
-    .stars span {
+    .stars {
       font-size: 2rem;
       color: #00bfa5;
       cursor: pointer;
-      padding: 0 4px;
-      transition: transform 0.2s;
-    }
-
-    .stars span:hover {
-      transform: scale(1.2);
     }
 
     .feedback textarea {
@@ -213,6 +190,9 @@
 
   <div id="tsparticles"></div>
 
+  <!-- Bot Logo -->
+  <img src="https://cdn.discordapp.com/avatars/1313311543122989076/8472bcf5a62e9b80818737304f8d070f.webp" alt="Axion Bot Logo" class="bot-logo">
+
   <h1>Axion</h1>
   <h2>The Trusted Discord Bot</h2>
   <p>Join the thousands who rely on Axion for powerful, reliable server protection and moderation.</p>
@@ -249,12 +229,8 @@
   <!-- Feedback Section -->
   <div class="feedback">
     <h2>⭐ Rate & Suggest</h2>
-    <div class="stars" id="star-rating">
-      <span data-value="1">⭐</span>
-      <span data-value="2">⭐</span>
-      <span data-value="3">⭐</span>
-      <span data-value="4">⭐</span>
-      <span data-value="5">⭐</span>
+    <div class="stars">
+      ⭐⭐⭐⭐⭐
     </div>
     <textarea rows="5" placeholder="Leave a suggestion or comment here..."></textarea><br>
     <button onclick="alert('Thanks for your feedback!')">Submit</button>
@@ -265,7 +241,7 @@
   </footer>
 
   <!-- tsParticles -->
-  <script async src="https://cdn.jsdelivr.net/npm/tsparticles@2.11.1/tsparticles.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/tsparticles@2.11.1/tsparticles.bundle.min.js"></script>
   <script>
     tsParticles.load("tsparticles", {
       fullScreen: { enable: false },
@@ -305,26 +281,6 @@
         }
       }
     });
-
-    // Feedback star interaction
-    document.querySelectorAll('#star-rating span').forEach(star => {
-      star.addEventListener('click', e => {
-        const rating = e.target.getAttribute('data-value');
-        alert(`You rated us ${rating} stars!`);
-      });
-    });
   </script>
-
-  <!-- Optional Google Analytics -->
-  <!--
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXX"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-XXXXXXX');
-  </script>
-  -->
-
 </body>
 </html>
